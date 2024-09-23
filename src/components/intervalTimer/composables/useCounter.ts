@@ -4,10 +4,15 @@ import { watch } from "vue";
 export default function useTimer(ctx: TimerContext) {
   let timer = null as null | number;
 
+  const tick = () => {
+    ctx.counter.value--;
+    const progress = ctx.counter.value / ctx.initialCounter.value;
+    ctx.progress.value = Math.round(progress * 100) / 100;
+  };
+
   const resume = () => {
-    timer = setInterval(() => {
-      ctx.counter.value++;
-    }, 1000);
+    timer = setInterval(tick, 1000);
+    tick();
   };
 
   const pause = () => {

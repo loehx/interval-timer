@@ -1,17 +1,7 @@
-import useContext from "./useContext";
-import useCounter from "./useCounter";
-import useSettings from "./useSettings";
-import useStateSwitcher from "./useStateSwitcher";
+import { type TimerContext } from "./useContext";
 
-export default function useController() {
-  const ctx = useContext();
-
-  useSettings(ctx);
-  useCounter(ctx);
-  useStateSwitcher(ctx);
-
+export default function useController(ctx: TimerContext) {
   return {
-    ctx,
     start: () => {
       ctx.isRunning.value = true;
     },
@@ -24,7 +14,6 @@ export default function useController() {
     stop: () => {
       ctx.isRunning.value = false;
       ctx.isPaused.value = false;
-      ctx.counter.value = 0;
     },
   };
 }

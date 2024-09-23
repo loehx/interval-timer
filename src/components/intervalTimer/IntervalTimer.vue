@@ -1,36 +1,35 @@
 <script setup lang="ts">
-import useController from "./composables/useController";
+import { onMounted } from "vue";
+import useIntervalTimer from "./composables/useIntervalTimer";
 
-const { ctx } = useController();
+const { ctx, start } = useIntervalTimer();
+
+onMounted(() => {
+  start();
+});
 </script>
 
 <template>
-  <div class="greetings">
-    <h1 class="green">{{ ctx.counter }}</h1>
+  <div class="container">
+    <div class="counter">{{ ctx.formattedCounter }}</div>
+    <pre class="stringified">{{ ctx.stringified }}</pre>
   </div>
 </template>
 
-<style scoped>
-h1 {
+<style scoped lang="scss">
+.counter {
   font-weight: 500;
   font-size: 2.6rem;
-  position: relative;
-  top: -10px;
 }
 
-h3 {
-  font-size: 1.2rem;
-}
-
-.greetings h1,
-.greetings h3 {
-  text-align: center;
-}
-
-@media (min-width: 1024px) {
-  .greetings h1,
-  .greetings h3 {
-    text-align: left;
-  }
+.stringified {
+  font-size: 1rem;
+  margin: 0;
+  opacity: 0.3;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  padding: 10px;
 }
 </style>
