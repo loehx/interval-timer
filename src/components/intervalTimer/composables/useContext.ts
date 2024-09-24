@@ -21,6 +21,8 @@ const ctx = {
   isPaused: ref(false),
   stringified: ref(""),
   snapshots: [] as Record<string, unknown>[],
+  backgroundColor: ref("#f5f5f5"),
+  queryParams: ref({} as Record<string, string>),
 };
 
 window.ctx = ctx;

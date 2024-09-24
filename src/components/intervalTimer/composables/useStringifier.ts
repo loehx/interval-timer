@@ -6,10 +6,12 @@ export default function useStringifier(ctx: TimerContext) {
     ctx.stringified.value = JSON.stringify(
       {
         counter: ctx.counter.value,
+        initialCounter: ctx.initialCounter.value,
         progress: ctx.progress.value,
         state: ctx.currentState.value,
         isRunning: ctx.isRunning.value,
         isPaused: ctx.isPaused.value,
+        backgroundColor: ctx.backgroundColor.value,
       },
       null,
       2

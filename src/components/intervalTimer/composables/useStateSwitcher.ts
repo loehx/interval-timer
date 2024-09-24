@@ -7,7 +7,7 @@ const STATE_FLOW = {
   pause: "workout",
 } as Record<TimerState, TimerState>;
 
-export default function useTimer(ctx: TimerContext) {
+export default function useStateSwitcher(ctx: TimerContext) {
   const setState = (state: TimerState) => {
     ctx.currentState.value = state;
     ctx.counter.value = ctx.times[state];
@@ -15,7 +15,7 @@ export default function useTimer(ctx: TimerContext) {
   };
 
   watch(ctx.counter, () => {
-    if (ctx.counter.value < 0) {
+    if (ctx.counter.value <= 0) {
       const newState = STATE_FLOW[ctx.currentState.value];
       setState(newState);
     }

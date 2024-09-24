@@ -3,11 +3,11 @@ import { watch } from "vue";
 
 export default function useTimer(ctx: TimerContext) {
   let timer = null as null | number;
+  let init = true;
 
   const tick = () => {
-    ctx.counter.value--;
-    const progress = ctx.counter.value / ctx.initialCounter.value;
-    ctx.progress.value = Math.round(progress * 100) / 100;
+    const counter = Math.max(ctx.counter.value - 1, 0);
+    ctx.counter.value = counter;
   };
 
   const resume = () => {

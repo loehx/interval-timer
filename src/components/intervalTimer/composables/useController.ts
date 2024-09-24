@@ -5,6 +5,9 @@ export default function useController(ctx: TimerContext) {
     start: () => {
       ctx.isRunning.value = true;
     },
+    togglePause: () => {
+      ctx.isPaused.value = !ctx.isPaused.value;
+    },
     pause: () => {
       ctx.isPaused.value = true;
     },
