@@ -17,7 +17,6 @@ const ctx = {
   },
   states: ["start", "workout", "pause"] as TimerState[],
   currentState: ref<TimerState>("start"),
-  isRunning: ref(false),
   isPaused: ref(false),
   stringified: ref(""),
   snapshots: [] as Record<string, unknown>[],
