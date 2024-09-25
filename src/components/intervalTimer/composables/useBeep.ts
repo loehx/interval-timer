@@ -12,8 +12,6 @@ export default function useBeep(ctx: TimerContext) {
   });
 }
 
-window.beep = beep;
-
 function beep(params: { frequency: number; duration: number; volume: number }) {
   var context = new AudioContext();
   var oscillator = context.createOscillator();

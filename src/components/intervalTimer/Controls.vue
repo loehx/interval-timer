@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import useIntervalTimer from "./composables/useIntervalTimer";
 
-const { ctx, controller, theme } = useIntervalTimer();
+const { ctx, controller } = useIntervalTimer();
 </script>
 
 <template>

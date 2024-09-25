@@ -23,6 +23,7 @@ const ctx = {
   queryParams: ref({} as Record<string, string>),
 };
 
+// @ts-ignore
 window.ctx = ctx;
 
 export type TimerContext = typeof ctx;
