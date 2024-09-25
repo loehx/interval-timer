@@ -32,6 +32,7 @@ const bgColor = computed(() => ctx.backgroundColor.value);
   top: 0;
   bottom: 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: v-bind(bgColor);

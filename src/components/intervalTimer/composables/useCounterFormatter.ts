@@ -2,9 +2,13 @@ import type { TimerContext } from "./useContext";
 import { watch } from "vue";
 
 export default function useTimer(ctx: TimerContext) {
-  watch(ctx.counter, (counter) => {
-    ctx.formattedCounter.value = formatCounter(counter);
-  });
+  watch(
+    ctx.counter,
+    (counter) => {
+      ctx.formattedCounter.value = formatCounter(counter);
+    },
+    { immediate: true }
+  );
 }
 function formatCounter(counter: number): string {
   if (counter < 60) return String(counter);

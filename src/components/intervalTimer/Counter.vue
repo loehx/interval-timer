@@ -13,7 +13,6 @@ const { ctx } = useIntervalTimer();
     >
       {{ ctx.formattedCounter }}
     </div>
-    <div class="state">{{ ctx.currentState.value }}</div>
   </div>
 </template>
 
@@ -33,12 +32,5 @@ const { ctx } = useIntervalTimer();
   &--big {
     font-size: 5rem;
   }
-}
-
-.state {
-  text-transform: uppercase;
-  font-weight: 900;
-  opacity: 0.2;
-  cursor: default;
 }
 </style>

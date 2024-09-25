@@ -11,5 +11,8 @@ export default function useController(ctx: TimerContext) {
     resume: () => {
       ctx.isPaused.value = false;
     },
+    skip: () => {
+      ctx.counter.value = 0;
+    },
   };
 }
