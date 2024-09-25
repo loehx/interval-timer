@@ -10,7 +10,6 @@ export default function useTimer(ctx: TimerContext) {
 
   const start = () => {
     setInterval(tick, 1000);
-    tick();
   };
 
   onMounted(() => start());

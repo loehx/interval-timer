@@ -1,5 +1,5 @@
 import type { TimerContext, TimerState } from "./useContext";
-import { watch } from "vue";
+import { onMounted, watch } from "vue";
 
 const STATE_FLOW = {
   start: "workout",
@@ -22,6 +22,4 @@ export default function useStateSwitcher(ctx: TimerContext) {
   });
 
   setState("start");
-
-  ctx.counter.value = ctx.times[ctx.currentState.value];
 }

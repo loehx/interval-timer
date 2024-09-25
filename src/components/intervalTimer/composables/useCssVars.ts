@@ -4,13 +4,15 @@ import { computed, watch } from "vue";
 
 export default function useCssVars(ctx: TimerContext) {
   return computed(() => {
-    const progress =
-      Math.round(((ctx.counter.value - 1) / ctx.initialCounter.value) * 100) /
-      100;
+    const progressDown =
+      Math.round((ctx.counter.value / ctx.initialCounter.value) * 100) / 100;
+    const progressUp = Math.round((1 - progressDown) * 100) / 100;
 
     return {
-      "--progress-down": progress,
-      "--progress-up": Math.round((1 - progress) * 100) / 100,
+      "--workout-progress":
+        ctx.currentState.value === "workout" ? progressDown : progressUp,
+      "--progress-down": progressDown,
+      "--progress-up": progressUp,
     };
   });
 }

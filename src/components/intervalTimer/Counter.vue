@@ -28,6 +28,7 @@ const { ctx } = useIntervalTimer();
 .counter {
   font-weight: 500;
   font-size: 2.6rem;
+  cursor: default;
 
   &--big {
     font-size: 5rem;
@@ -38,5 +39,6 @@ const { ctx } = useIntervalTimer();
   text-transform: uppercase;
   font-weight: 900;
   opacity: 0.2;
+  cursor: default;
 }
 </style>

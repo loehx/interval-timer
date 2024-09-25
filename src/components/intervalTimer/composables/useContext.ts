@@ -5,7 +5,6 @@ export type TimerState = "start" | "workout" | "pause";
 const ctx = {
   counter: ref(0),
   initialCounter: ref(0),
-  progress: ref(0),
   formattedCounter: ref("0"),
 
   // Timer settings
@@ -17,7 +16,7 @@ const ctx = {
   },
   states: ["start", "workout", "pause"] as TimerState[],
   currentState: ref<TimerState>("start"),
-  isPaused: ref(false),
+  isPaused: ref(true),
   stringified: ref(""),
   snapshots: [] as Record<string, unknown>[],
   backgroundColor: ref("#f5f5f5"),

@@ -7,7 +7,6 @@ export default function useStringifier(ctx: TimerContext) {
       {
         counter: ctx.counter.value,
         initialCounter: ctx.initialCounter.value,
-        progress: ctx.progress.value,
         state: ctx.currentState.value,
         isPaused: ctx.isPaused.value,
         backgroundColor: ctx.backgroundColor.value,

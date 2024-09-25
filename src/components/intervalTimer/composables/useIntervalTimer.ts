@@ -8,6 +8,7 @@ import useSnapshots from "./useSnapshots";
 import useController from "./useController";
 import useCssVars from "./useCssVars";
 import useTimeSettings from "./useTimeSettings";
+import useBeep from "./useBeep";
 
 let ctx = null as null | TimerContext;
 
@@ -15,12 +16,13 @@ export default function useIntervalTimer() {
   if (!ctx) {
     ctx = useContext();
     useQueryParams(ctx);
-    useCounter(ctx);
+    useTimeSettings(ctx);
     useStateSwitcher(ctx);
+    useCounter(ctx);
     useCounterFormatter(ctx);
     useStringifier(ctx);
     useSnapshots(ctx);
-    useTimeSettings(ctx);
+    useBeep(ctx);
   }
 
   return {

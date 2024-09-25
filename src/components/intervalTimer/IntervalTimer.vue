@@ -6,6 +6,7 @@ import Controls from "./Controls.vue";
 import Background from "./Background.vue";
 import Stringified from "./Stringified.vue";
 import Counter from "./Counter.vue";
+import PauseScreen from "./PauseScreen.vue";
 
 const { ctx, controller, cssVars } = useIntervalTimer();
 
@@ -19,6 +20,7 @@ const bgColor = computed(() => ctx.backgroundColor.value);
     <!-- <Stringified /> -->
     <Progress v-if="ctx.currentState.value !== 'start'" />
     <Controls />
+    <PauseScreen />
   </div>
 </template>
 
