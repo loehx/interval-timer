@@ -6,7 +6,7 @@ const { ctx, controller } = useIntervalTimer();
 <template>
   <div
     class="pause-screen"
-    @click="controller.resume()"
+    @click.stop="controller.resume()"
     :class="{
       'pause-screen--visible': ctx.isPaused.value,
     }"

@@ -12,6 +12,17 @@ export default function useBeep(ctx: TimerContext) {
     if (ctx.isMuted.value) return;
     beep({ frequency: 800, duration: 600, volume: 0.1 });
   });
+
+  watch(ctx.isMuted, () => {
+    ctx.queryParams.value = {
+      ...ctx.queryParams.value,
+      muted: ctx.isMuted.value ? "1" : "0",
+    };
+  });
+
+  if (ctx.queryParams.value.muted === "1") {
+    ctx.isMuted.value = true;
+  }
 }
 
 function beep(params: { frequency: number; duration: number; volume: number }) {

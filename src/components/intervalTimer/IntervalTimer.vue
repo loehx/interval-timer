@@ -9,12 +9,10 @@ import Counter from "./Counter.vue";
 import PauseScreen from "./PauseScreen.vue";
 
 const { ctx, controller, cssVars } = useIntervalTimer();
-
-const bgColor = computed(() => ctx.backgroundColor.value);
 </script>
 
 <template>
-  <div class="container" :style="cssVars">
+  <div class="container" :style="cssVars" @click="controller.pause()">
     <Background />
     <Counter />
     <!-- <Stringified /> -->
