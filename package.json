@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
-    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
+    "deploy": "yarn build && push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
     "vue": "^3.4.29",
