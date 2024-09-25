@@ -23,7 +23,7 @@ const { ctx } = useIntervalTimer();
 
   &--colorful {
     background-color: #fff4b8;
-    filter: hue-rotate(calc(var(--progress-up) * 360deg));
+    filter: hue-rotate(calc((1 - var(--workout-progress)) * 360deg));
   }
 }
 </style>

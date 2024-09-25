@@ -14,5 +14,8 @@ export default function useController(ctx: TimerContext) {
     skip: () => {
       ctx.counter.value = 0;
     },
+    toggleMute: () => {
+      ctx.isMuted.value = !ctx.isMuted.value;
+    },
   };
 }

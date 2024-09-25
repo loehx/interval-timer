@@ -9,6 +9,9 @@ const { ctx, controller } = useIntervalTimer();
     <div class="button" @click="controller.togglePause()">
       {{ ctx.isPaused.value ? "RESUME" : "PAUSE" }}
     </div>
+    <div class="button" @click="controller.toggleMute()">
+      {{ ctx.isMuted.value ? "UNMUTE" : "MUTE" }}
+    </div>
     <div class="button" @click="controller.skip()">SKIP</div>
   </div>
 </template>
@@ -22,7 +25,7 @@ const { ctx, controller } = useIntervalTimer();
 }
 
 .button {
-  padding: 15px 20px;
+  padding: 2vh 5vw;
   cursor: pointer;
   transition: all ease 0.2s;
   font-weight: 900;

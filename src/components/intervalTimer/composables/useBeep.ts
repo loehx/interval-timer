@@ -4,10 +4,12 @@ import type { TimerContext } from "./useContext";
 export default function useBeep(ctx: TimerContext) {
   watch(ctx.counter, () => {
     if (ctx.counter.value > 3) return;
+    if (ctx.isMuted.value) return;
     beep({ frequency: 800, duration: 100, volume: 0.05 });
   });
 
   watch(ctx.currentState, () => {
+    if (ctx.isMuted.value) return;
     beep({ frequency: 800, duration: 600, volume: 0.1 });
   });
 }

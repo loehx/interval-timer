@@ -21,6 +21,7 @@ const ctx = {
   snapshots: [] as Record<string, unknown>[],
   backgroundColor: ref("#f5f5f5"),
   queryParams: ref({} as Record<string, string>),
+  isMuted: ref(false),
 };
 
 // @ts-ignore
