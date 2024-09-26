@@ -9,8 +9,8 @@ const { ctx, controller, color } = useIntervalTimer();
     <div class="button" @click.stop="controller.toggleMute()">
       {{ ctx.isMuted.value ? "UNMUTE" : "MUTE" }}
     </div>
-    <div class="button" @click.stop="controller.skip()">SKIP</div>
     <div class="button" @click.stop="color.toggleColor()">COLOR</div>
+    <div class="button" @click.stop="controller.skip()">SKIP</div>
   </div>
 </template>
 

@@ -28,16 +28,13 @@ const { ctx } = useIntervalTimer();
   justify-content: center;
 }
 .counter {
+  padding: 0 20px;
   font-weight: 500;
   font-size: 2.6rem;
   cursor: default;
   transition: all 0.3s ease;
   will-change: filter, font-size;
   filter: drop-shadow(15px 15px 2px rgba(0, 0, 0, 0.1));
-  -webkit-filter: drop-shadowshadow(15px 15px 2px rgba(0, 0, 0, 0.1));
-  -moz-filter: shadow(15px 15px 2px rgba(0, 0, 0, 0.1));
-  -ms-filter: shadow(15px 15px 2px rgba(0, 0, 0, 0.1));
-  -o-filter: shadow(15px 15px 2px rgba(0, 0, 0, 0.1));
 
   &--big {
     font-size: 5rem;
