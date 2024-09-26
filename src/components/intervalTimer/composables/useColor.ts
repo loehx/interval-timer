@@ -14,7 +14,6 @@ const ALL_COLORS = [
   "#589dd6",
   "#b458d6",
   "#d658bb",
-  "#d6588f",
 ];
 
 export default function useColor(ctx: TimerContext, setup: boolean) {
@@ -25,6 +24,9 @@ export default function useColor(ctx: TimerContext, setup: boolean) {
       ...ctx.queryParams.value,
       color: color.replace("#", ""),
     };
+    document
+      .querySelector('[name="theme-color"]')
+      ?.setAttribute("content", color);
   }
 
   if (setup) {
