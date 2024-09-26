@@ -2,15 +2,33 @@
 import useIntervalTimer from "./composables/useIntervalTimer";
 
 const { ctx, controller, color } = useIntervalTimer();
+
+const isTouch = ctx.isTouch.value;
 </script>
 
 <template>
-  <div class="wrapper">
-    <div class="button" @click.stop="controller.toggleMute()">
+  <div class="wrapper" :class="{ 'wrapper--desktop': !isTouch }">
+    <div
+      class="button"
+      @touchstart.stop="isTouch && controller.toggleMute()"
+      @click.stop="!isTouch && controller.toggleMute()"
+    >
       {{ ctx.isMuted.value ? "UNMUTE" : "MUTE" }}
     </div>
-    <div class="button" @click.stop="color.toggleColor()">COLOR</div>
-    <div class="button" @click.stop="controller.skip()">SKIP</div>
+    <div
+      class="button"
+      @touchstart.stop="isTouch && color.toggleColor()"
+      @click.stop="!isTouch && color.toggleColor()"
+    >
+      COLOR
+    </div>
+    <div
+      class="button"
+      @touchstart.stop="isTouch && controller.skip()"
+      @click.stop="!isTouch && controller.skip()"
+    >
+      SKIP
+    </div>
   </div>
 </template>
 
@@ -30,8 +48,10 @@ const { ctx, controller, color } = useIntervalTimer();
   text-transform: uppercase;
   opacity: 0.3;
 
-  &:hover {
-    background-color: rgba($color: #000000, $alpha: 0.1);
+  .wrapper--desktop {
+    &:hover {
+      background-color: rgba($color: #000000, $alpha: 0.1);
+    }
   }
 
   &:active {

@@ -23,6 +23,7 @@ const ctx = {
   isMuted: ref(false),
   backgroundColor: ref("#f5f5f5"),
   fontColor: ref("#000"),
+  isTouch: ref(false),
 };
 
 // @ts-ignore

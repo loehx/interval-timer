@@ -11,12 +11,14 @@ import useTimeSettings from "./useTimeSettings";
 import useBeep from "./useBeep";
 import useNoSleep from "./useNoSleep";
 import useColor from "./useColor";
+import useDeviceDetection from "./useDeviceDetection";
 
 let ctx = null as null | TimerContext;
 
 export default function useIntervalTimer() {
   if (!ctx) {
     ctx = useContext();
+    useDeviceDetection(ctx);
     useQueryParams(ctx);
     useTimeSettings(ctx);
     useStateSwitcher(ctx);

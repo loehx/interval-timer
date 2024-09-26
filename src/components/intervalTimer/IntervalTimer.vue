@@ -11,7 +11,12 @@ const { ctx, controller, cssVars } = useIntervalTimer();
 </script>
 
 <template>
-  <div class="container" :style="cssVars" @click="controller.pause()">
+  <div
+    class="container"
+    :style="cssVars"
+    @click.stop="!ctx.isTouch && controller.pause()"
+    @touchstart.stop="ctx.isTouch && controller.pause()"
+  >
     <Background />
     <Counter />
     <!-- <Stringified /> -->
