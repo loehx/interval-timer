@@ -8,14 +8,15 @@ import Counter from "./Counter.vue";
 import PauseScreen from "./PauseScreen.vue";
 
 const { ctx, controller, cssVars } = useIntervalTimer();
+const isTouch = ctx.isTouch.value;
 </script>
 
 <template>
   <div
     class="container"
     :style="cssVars"
-    @click.stop="!ctx.isTouch && controller.pause()"
-    @touchstart.stop="ctx.isTouch && controller.pause()"
+    @click.stop="!isTouch && controller.pause()"
+    @touchstart.stop="isTouch && controller.pause()"
   >
     <Background />
     <Counter />

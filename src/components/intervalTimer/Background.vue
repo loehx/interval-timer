@@ -20,11 +20,28 @@ const { ctx } = useIntervalTimer();
   width: 100%;
   height: 100%;
   transition: all 0.5s ease;
-  background-color: var(--background-color);
-  filter: saturate(0.5);
+  background: linear-gradient(var(--background-color), var(--background-color));
+
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s ease;
+  }
+
+  &:before {
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+    opacity: 1;
+  }
 
   &--workout {
-    filter: saturate(1);
+    &:before {
+      opacity: 0;
+    }
   }
 }
 </style>

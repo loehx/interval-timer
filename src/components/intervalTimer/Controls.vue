@@ -48,10 +48,8 @@ const isTouch = ctx.isTouch.value;
   text-transform: uppercase;
   opacity: 0.3;
 
-  .wrapper--desktop {
-    &:hover {
-      background-color: rgba($color: #000000, $alpha: 0.1);
-    }
+  .wrapper--desktop &:hover {
+    background-color: rgba($color: #000000, $alpha: 0.1);
   }
 
   &:active {

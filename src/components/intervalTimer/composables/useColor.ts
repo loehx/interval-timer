@@ -4,7 +4,6 @@ import type { TimerContext } from "./useContext";
 const ALL_COLORS = [
   "#f5f5f5",
   "#383838",
-  "#111111",
   "#58c5d6",
   "#58d6bb",
   "#58d682",

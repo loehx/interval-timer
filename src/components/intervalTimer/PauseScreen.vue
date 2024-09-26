@@ -1,18 +1,18 @@
 <script setup lang="ts">
 import useIntervalTimer from "./composables/useIntervalTimer";
 const { ctx, controller, noSleep } = useIntervalTimer();
-
+const isTouch = ctx.isTouch.value;
 const onClick = () => {
-  noSleep.activate();
   controller.resume();
+  noSleep.activate();
 };
 </script>
 
 <template>
   <div
     class="pause-screen"
-    @click.stop="!ctx.isTouch && onClick()"
-    @touchstart.stop="ctx.isTouch && onClick()"
+    @click.stop="!isTouch && onClick()"
+    @touchstart.stop="isTouch && onClick()"
     :class="{
       'pause-screen--visible': ctx.isPaused.value,
     }"
@@ -49,6 +49,7 @@ const onClick = () => {
   &__label {
     font-size: 1.5rem;
     transition: all 0.3s ease;
+    user-select: none;
   }
 
   &:active {
