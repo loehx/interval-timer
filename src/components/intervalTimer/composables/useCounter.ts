@@ -1,6 +1,8 @@
 import type { TimerContext } from "./useContext";
 import { onMounted, watch } from "vue";
 
+let interval = null as any;
+
 export default function useTimer(ctx: TimerContext) {
   const tick = () => {
     if (ctx.isPaused.value) return;
@@ -9,7 +11,10 @@ export default function useTimer(ctx: TimerContext) {
   };
 
   const start = () => {
-    setInterval(tick, 1000);
+    if (interval) {
+      clearInterval(interval);
+    }
+    interval = setInterval(tick, 1000);
   };
 
   onMounted(() => start());

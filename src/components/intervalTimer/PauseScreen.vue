@@ -1,12 +1,17 @@
 <script setup lang="ts">
 import useIntervalTimer from "./composables/useIntervalTimer";
-const { ctx, controller } = useIntervalTimer();
+const { ctx, controller, noSleep } = useIntervalTimer();
+
+const onClick = () => {
+  noSleep.activate();
+  controller.resume();
+};
 </script>
 
 <template>
   <div
     class="pause-screen"
-    @click.stop="controller.resume()"
+    @click.stop="onClick($event)"
     :class="{
       'pause-screen--visible': ctx.isPaused.value,
     }"
