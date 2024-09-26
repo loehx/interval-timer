@@ -32,5 +32,6 @@ const { ctx, controller, cssVars } = useIntervalTimer();
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  color: var(--font-color);
 }
 </style>

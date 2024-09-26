@@ -56,7 +56,7 @@ const { ctx } = useIntervalTimer();
       display: block;
       height: 1px;
       width: 50px;
-      background-color: black;
+      background-color: var(--font-color);
       top: 50%;
       transform: translateY(-50%);
     }

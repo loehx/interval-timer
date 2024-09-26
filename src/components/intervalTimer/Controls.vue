@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import useIntervalTimer from "./composables/useIntervalTimer";
 
-const { ctx, controller } = useIntervalTimer();
+const { ctx, controller, color } = useIntervalTimer();
 </script>
 
 <template>
@@ -10,6 +10,7 @@ const { ctx, controller } = useIntervalTimer();
       {{ ctx.isMuted.value ? "UNMUTE" : "MUTE" }}
     </div>
     <div class="button" @click.stop="controller.skip()">SKIP</div>
+    <div class="button" @click.stop="color.toggleColor()">COLOR</div>
   </div>
 </template>
 

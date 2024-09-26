@@ -10,6 +10,7 @@ import useCssVars from "./useCssVars";
 import useTimeSettings from "./useTimeSettings";
 import useBeep from "./useBeep";
 import useNoSleep from "./useNoSleep";
+import useColor from "./useColor";
 
 let ctx = null as null | TimerContext;
 
@@ -24,6 +25,7 @@ export default function useIntervalTimer() {
     useStringifier(ctx);
     useSnapshots(ctx);
     useBeep(ctx);
+    useColor(ctx, true);
   }
 
   return {
@@ -31,5 +33,6 @@ export default function useIntervalTimer() {
     cssVars: useCssVars(ctx),
     controller: useController(ctx),
     noSleep: useNoSleep(ctx),
+    color: useColor(ctx, false),
   };
 }

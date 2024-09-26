@@ -13,6 +13,8 @@ export default function useCssVars(ctx: TimerContext) {
         ctx.currentState.value === "workout" ? progressDown : progressUp,
       "--progress-down": progressDown,
       "--progress-up": progressUp,
+      "--background-color": ctx.backgroundColor.value,
+      "--font-color": ctx.fontColor.value,
     };
   });
 }

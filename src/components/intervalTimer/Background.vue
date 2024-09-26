@@ -7,7 +7,7 @@ const { ctx } = useIntervalTimer();
   <div
     class="background"
     :class="{
-      'background--colorful': ctx.currentState.value === 'workout',
+      'background--workout': ctx.currentState.value === 'workout',
     }"
   ></div>
 </template>
@@ -20,10 +20,11 @@ const { ctx } = useIntervalTimer();
   width: 100%;
   height: 100%;
   transition: all 0.5s ease;
+  background-color: var(--background-color);
+  filter: saturate(0.5);
 
-  &--colorful {
-    background-color: #fff4b8;
-    filter: hue-rotate(calc((1 - var(--workout-progress)) * 360deg));
+  &--workout {
+    filter: saturate(1);
   }
 }
 </style>
