@@ -11,7 +11,7 @@ const onClick = () => {
 <template>
   <div
     class="pause-screen"
-    @click.stop="onClick($event)"
+    @click.stop="onClick()"
     :class="{
       'pause-screen--visible': ctx.isPaused.value,
     }"
