@@ -1,10 +1,9 @@
 <script setup lang="ts">
-import { onMounted, computed } from "vue";
 import useIntervalTimer from "./composables/useIntervalTimer";
 import Progress from "./Progress.vue";
 import Controls from "./Controls.vue";
 import Background from "./Background.vue";
-import Stringified from "./Stringified.vue";
+// import Stringified from "./Stringified.vue";
 import Counter from "./Counter.vue";
 import PauseScreen from "./PauseScreen.vue";
 
@@ -33,6 +32,5 @@ const { ctx, controller, cssVars } = useIntervalTimer();
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: v-bind(bgColor);
 }
 </style>
