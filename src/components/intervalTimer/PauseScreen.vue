@@ -5,7 +5,6 @@ const isTouch = ctx.isTouch.value;
 const onClick = () => {
   controller.resume();
   noSleep.activate();
-  sound.init();
 };
 </script>
 
