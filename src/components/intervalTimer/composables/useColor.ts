@@ -1,4 +1,3 @@
-import { ref, watch } from "vue";
 import type { TimerContext } from "./useContext";
 
 const ALL_COLORS = [

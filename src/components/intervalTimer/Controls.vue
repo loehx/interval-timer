@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import useIntervalTimer from "./composables/useIntervalTimer";
 
-const { ctx, controller, color } = useIntervalTimer();
+const { ctx, controller, color, sound } = useIntervalTimer();
 
 const isTouch = ctx.isTouch.value;
 </script>
@@ -10,17 +10,17 @@ const isTouch = ctx.isTouch.value;
   <div class="wrapper" :class="{ 'wrapper--desktop': !isTouch }">
     <div
       class="button"
-      @touchstart.stop="isTouch && controller.toggleMute()"
-      @click.stop="!isTouch && controller.toggleMute()"
-    >
-      {{ ctx.isMuted.value ? "UNMUTE" : "MUTE" }}
-    </div>
-    <div
-      class="button"
       @touchstart.stop="isTouch && color.toggleColor()"
       @click.stop="!isTouch && color.toggleColor()"
     >
       COLOR
+    </div>
+    <div
+      class="button"
+      @touchstart.stop="isTouch && sound.toggleMute()"
+      @click.stop="!isTouch && sound.toggleMute()"
+    >
+      {{ ctx.isMuted.value ? "UNMUTE" : "MUTE" }}
     </div>
     <div
       class="button"

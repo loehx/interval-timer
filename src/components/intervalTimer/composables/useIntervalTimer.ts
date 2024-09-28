@@ -8,7 +8,7 @@ import useSnapshots from "./useSnapshots";
 import useController from "./useController";
 import useCssVars from "./useCssVars";
 import useTimeSettings from "./useTimeSettings";
-import useBeep from "./useBeep";
+import useSound from "./useSound";
 import useNoSleep from "./useNoSleep";
 import useColor from "./useColor";
 import useDeviceDetection from "./useDeviceDetection";
@@ -26,7 +26,7 @@ export default function useIntervalTimer() {
     useCounterFormatter(ctx);
     useStringifier(ctx);
     useSnapshots(ctx);
-    useBeep(ctx);
+    useSound(ctx, true);
     useColor(ctx, true);
   }
 
@@ -36,5 +36,6 @@ export default function useIntervalTimer() {
     controller: useController(ctx),
     noSleep: useNoSleep(ctx),
     color: useColor(ctx, false),
+    sound: useSound(ctx, false),
   };
 }

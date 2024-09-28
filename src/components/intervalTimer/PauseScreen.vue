@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import useIntervalTimer from "./composables/useIntervalTimer";
-const { ctx, controller, noSleep } = useIntervalTimer();
+const { ctx, controller, noSleep, sound } = useIntervalTimer();
 const isTouch = ctx.isTouch.value;
 const onClick = () => {
   controller.resume();
   noSleep.activate();
+  sound.init();
 };
 </script>
 
