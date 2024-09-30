@@ -12,6 +12,7 @@ import useSound from "./useSound";
 import useNoSleep from "./useNoSleep";
 import useColor from "./useColor";
 import useDeviceDetection from "./useDeviceDetection";
+import usePreventBrowserCache from "./usePreventBrowserCache";
 
 let ctx = null as null | TimerContext;
 
@@ -28,6 +29,7 @@ export default function useIntervalTimer() {
     useSnapshots(ctx);
     useSound(ctx, true);
     useColor(ctx, true);
+    usePreventBrowserCache(ctx);
   }
 
   return {
