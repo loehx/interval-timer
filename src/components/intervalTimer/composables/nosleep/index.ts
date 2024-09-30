@@ -14,12 +14,17 @@ const oldIOS = () =>
       .replace("_", ".")
       .replace("_", "")
   ) < 10 &&
-  !window.MSStream;
+  !(window as any).MSStream;
 
 // Detect native Wake Lock API support
 const nativeWakeLock = () => "wakeLock" in navigator;
 
 class NoSleep {
+  enabled: boolean;
+  _wakeLock: any;
+  noSleepTimer: any;
+  noSleepVideo: any;
+
   constructor() {
     this.enabled = false;
     if (nativeWakeLock()) {
@@ -59,7 +64,7 @@ class NoSleep {
     }
   }
 
-  _addSourceToVideo(element, type, dataURI) {
+  _addSourceToVideo(element: any, type: any, dataURI: any) {
     var source = document.createElement("source");
     source.src = dataURI;
     source.type = `video/${type}`;
@@ -108,11 +113,11 @@ class NoSleep {
     } else {
       let playPromise = this.noSleepVideo.play();
       return playPromise
-        .then((res) => {
+        .then((res: any) => {
           this.enabled = true;
           return res;
         })
-        .catch((err) => {
+        .catch((err: any) => {
           this.enabled = false;
           throw err;
         });
