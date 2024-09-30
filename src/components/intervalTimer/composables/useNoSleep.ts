@@ -1,14 +1,15 @@
 import type { TimerContext } from "./useContext";
 import NoSleep from "./nosleep";
 
+let nosleep = null as any;
+
 export default function useNoSleep(ctx: TimerContext) {
-  let nosleep = null as any;
+  nosleep = nosleep || new NoSleep();
 
   return {
     // Needs to run within click event
     activate: async () => {
       try {
-        nosleep = nosleep || new NoSleep();
         if (!nosleep.enabled) {
           nosleep.enable();
         }

@@ -2,17 +2,16 @@
 import useIntervalTimer from "./composables/useIntervalTimer";
 const { ctx, controller, noSleep, sound } = useIntervalTimer();
 const isTouch = ctx.isTouch.value;
-const onClick = () => {
+const onClick = async () => {
+  await noSleep.activate();
   controller.resume();
-  noSleep.activate();
 };
 </script>
 
 <template>
   <div
     class="pause-screen"
-    @click.stop="!isTouch && onClick()"
-    @touchstart.stop="isTouch && onClick()"
+    @click.stop="onClick()"
     :class="{
       'pause-screen--visible': ctx.isPaused.value,
     }"
