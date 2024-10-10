@@ -38,9 +38,7 @@ const onClick = async () => {
   background: linear-gradient(rgba(0, 0, 0, 0) 5%, rgba(0, 0, 0, 0.4));
   mix-blend-mode: multiply;
   cursor: pointer;
-  @media screen and (-webkit-min-device-pixel-ratio: 0) {
-    /* chrome only */
-    -webkit-backdrop-filter: blur(6px);
+  @media only screen and (min-width: 1280px) {
     backdrop-filter: blur(6px);
   }
 
