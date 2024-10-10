@@ -1,5 +1,7 @@
 # nn-timer
 
+## [loehx.github.io/nn-timer](https://loehx.github.io/nn-timer)
+
 ## Project Setup
 
 ```sh
