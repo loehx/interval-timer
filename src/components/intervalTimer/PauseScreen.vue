@@ -35,7 +35,7 @@ const onClick = async () => {
   font-weight: 900;
   opacity: 0;
   pointer-events: none;
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+  background: linear-gradient(rgba(0, 0, 0, 0) 5%, rgba(0, 0, 0, 0.4));
   mix-blend-mode: multiply;
   cursor: pointer;
   @media screen and (-webkit-min-device-pixel-ratio: 0) {
