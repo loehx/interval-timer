@@ -4,18 +4,23 @@ const { ctx } = useIntervalTimer();
 </script>
 
 <template>
-  <pre class="version">{{ ctx.version }}</pre>
+  <pre class="version">v{{ ctx.version }}</pre>
 </template>
 
 <style scoped lang="scss">
 .version {
   font-size: 0.8rem;
   margin: 0;
-  opacity: 0.3;
+  opacity: 0.8;
+  padding: 20px;
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 50%;
-  transform: translate(-50%, 0);
-  mix-blend-mode: difference;
+  transform: translateX(-50%);
+  font-family: "courier new";
+
+  &:hover {
+    opacity: 1;
+  }
 }
 </style>

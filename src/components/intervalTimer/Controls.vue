@@ -29,7 +29,6 @@ const isTouch = ctx.isTouch.value;
     >
       SKIP
     </div>
-    <div class="version">v{{ ctx.version }}</div>
   </div>
 </template>
 
@@ -56,14 +55,5 @@ const isTouch = ctx.isTouch.value;
   &:active {
     transform: scale(0.95);
   }
-}
-
-.version {
-  font-size: 0.8rem;
-  margin: 0;
-  opacity: 0.5;
-  position: relative;
-  padding: 2vh 5vw;
-  font-family: "courier new";
 }
 </style>
