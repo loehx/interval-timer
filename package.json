@@ -1,6 +1,6 @@
 {
   "name": "nn-timer",
-  "version": "0.0.0",
+  "version": "1.1",
   "private": true,
   "type": "module",
   "scripts": {
@@ -10,7 +10,8 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
     "generate-icons": "tsx src/scripts/generate-icons.ts",
-    "deploy": "yarn build && push-dir --dir=dist --branch=gh-pages --cleanup"
+    "bump-version": "tsx src/scripts/bump-version.ts",
+    "deploy": "yarn bump-version && yarn build && push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
     "favicons": "^7.2.0",
@@ -19,7 +20,7 @@
   },
   "devDependencies": {
     "@tsconfig/node20": "^20.1.4",
-    "@types/node": "^20.14.5",
+    "@types/node": "^20.16.11",
     "@vitejs/plugin-vue": "^5.0.5",
     "@vue/tsconfig": "^0.5.1",
     "npm-run-all2": "^6.2.0",
