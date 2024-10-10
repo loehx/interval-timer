@@ -38,6 +38,11 @@ const onClick = async () => {
   background: linear-gradient(rgba(0, 0, 0, 0) 5%, rgba(0, 0, 0, 0.4));
   mix-blend-mode: multiply;
   cursor: pointer;
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    /* chrome only */
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+  }
 
   &--visible {
     opacity: 1;
@@ -48,6 +53,8 @@ const onClick = async () => {
     font-size: 1.5rem;
     transition: all 0.3s ease;
     user-select: none;
+    position: absolute;
+    bottom: 10vh;
   }
 
   &:active {
