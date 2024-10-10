@@ -9,9 +9,11 @@
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
+    "generate-icons": "tsx src/scripts/generate-icons.ts",
     "deploy": "yarn build && push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
+    "favicons": "^7.2.0",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3"
   },
@@ -23,6 +25,7 @@
     "npm-run-all2": "^6.2.0",
     "push-dir": "^0.4.1",
     "sass-embedded": "^1.79.3",
+    "tsx": "^4.19.1",
     "typescript": "~5.4.0",
     "vite": "^5.3.1",
     "vite-plugin-vue-devtools": "^7.3.1",

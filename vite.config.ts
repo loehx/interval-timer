@@ -13,4 +13,5 @@ export default defineConfig({
     },
   },
   base: "/interval-timer/",
+  publicDir: "src/assets",
 });
