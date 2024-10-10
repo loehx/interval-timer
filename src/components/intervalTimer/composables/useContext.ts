@@ -1,5 +1,6 @@
 import { ref } from "vue";
 
+declare const __VERSION__: string;
 export type TimerState = "start" | "workout" | "pause";
 
 const ctx = {
@@ -24,6 +25,7 @@ const ctx = {
   backgroundColor: ref("#c9d658"),
   fontColor: ref("#000"),
   isTouch: ref(false),
+  version: __VERSION__,
 };
 
 // @ts-ignore

@@ -3,7 +3,7 @@ import useIntervalTimer from "./composables/useIntervalTimer";
 import Progress from "./Progress.vue";
 import Controls from "./Controls.vue";
 import Background from "./Background.vue";
-// import Stringified from "./Stringified.vue";
+import Version from "./Version.vue";
 import Counter from "./Counter.vue";
 import PauseScreen from "./PauseScreen.vue";
 
@@ -20,7 +20,7 @@ const isTouch = ctx.isTouch.value;
   >
     <Background />
     <Counter />
-    <!-- <Stringified /> -->
+    <Version />
     <Progress v-if="ctx.currentState.value !== 'start'" />
     <Controls />
     <PauseScreen />
