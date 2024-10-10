@@ -10,6 +10,13 @@ const isTouch = ctx.isTouch.value;
   <div class="wrapper" :class="{ 'wrapper--desktop': !isTouch }">
     <div
       class="button"
+      @touchstart.stop="isTouch && controller.promptIntervals()"
+      @click.stop="!isTouch && controller.promptIntervals()"
+    >
+      INTERVALS
+    </div>
+    <div
+      class="button"
       @touchstart.stop="isTouch && color.toggleColor()"
       @click.stop="!isTouch && color.toggleColor()"
     >
