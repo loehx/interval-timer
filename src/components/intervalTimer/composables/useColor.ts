@@ -24,6 +24,7 @@ export default function useColor(ctx: TimerContext, setup: boolean) {
     document
       .querySelector('[name="theme-color"]')
       ?.setAttribute("content", color);
+    document.documentElement.style.backgroundColor = color;
   }
 
   if (setup) {
