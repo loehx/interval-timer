@@ -13,6 +13,7 @@ import useNoSleep from "./useNoSleep";
 import useColor from "./useColor";
 import useDeviceDetection from "./useDeviceDetection";
 import usePreventBrowserCache from "./usePreventBrowserCache";
+import useMetaTitle from "./useMetaTitle";
 
 let ctx = null as null | TimerContext;
 
@@ -30,6 +31,7 @@ export default function useIntervalTimer() {
     useSound(ctx, true);
     useColor(ctx, true);
     usePreventBrowserCache(ctx);
+    useMetaTitle(ctx);
   }
 
   return {

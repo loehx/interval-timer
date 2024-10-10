@@ -7,7 +7,6 @@ import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-console.log("AAAAA", __dirname);
 const source = path.join(__dirname, "../assets/logo.png"); // Source image(s). `string`, `buffer` or array of `string`
 
 // make 'assets/icons' dir if not exists
@@ -29,13 +28,15 @@ const configuration = {
   display: "standalone", // Preferred display mode: "fullscreen", "standalone", "minimal-ui" or "browser". `string`
   orientation: "any", // Default orientation: "any", "natural", "portrait" or "landscape". `string`
   scope: "/", // set of URLs that the browser considers within your app
-  start_url: "/?homescreen=1", // Start URL when launching the application from a device. `string`
+  start_url: "/", // Start URL when launching the application from a device. `string`
   preferRelatedApplications: false, // Should the browser prompt the user to install the native companion app. `boolean`
   relatedApplications: undefined, // Information about the native companion apps. This will only be used if `preferRelatedApplications` is `true`. `Array<{ id: string, url: string, platform: string }>`
   version: "1.0", // Your application's version string. `string`
   pixel_art: false, // Keeps pixels "sharp" when scaling up, for pixel art.  Only supported in offline mode.
   loadManifestWithCredentials: false, // Browsers don't send cookies when fetching a manifest, enable this to fix that. `boolean`
   manifestMaskable: false, // Maskable source image(s) for manifest.json. "true" to use default source. More information at https://web.dev/maskable-icon/. `boolean`, `string`, `buffer` or array of `string`
+  background: "#c9d658", // Background colour for flattened icons. `string`
+  theme_color: "#c9d658", // Theme color user for example in Android's task switcher. `string`
   icons: {
     // Platform Options:
     // - offset - offset in percentage

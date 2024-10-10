@@ -1,17 +1,16 @@
 import type { TimerContext } from "./useContext";
 
 const ALL_COLORS = [
-  "#f5f5f5",
-  "#383838",
+  "#c9d658",
   "#58c5d6",
   "#58d6bb",
   "#58d682",
-  "#9dd658",
-  "#c9d658",
   "#d66558",
   "#589dd6",
   "#b458d6",
   "#d658bb",
+  "#f5f5f5",
+  "#383838",
 ];
 
 export default function useColor(ctx: TimerContext, setup: boolean) {
@@ -31,7 +30,7 @@ export default function useColor(ctx: TimerContext, setup: boolean) {
     if (ctx.queryParams.value.color) {
       setBackgroundColor("#" + ctx.queryParams.value.color);
     } else {
-      setBackgroundColor("#f5f5f5");
+      setBackgroundColor(ALL_COLORS[0]);
     }
   }
 
