@@ -12,7 +12,7 @@ const ctx = {
   times: {
     workout: 30,
     pause: 30,
-    start: 3,
+    start: 5,
   },
   states: ["start", "workout", "pause"] as TimerState[],
   currentState: ref<TimerState>("start"),
@@ -21,7 +21,7 @@ const ctx = {
   snapshots: [] as Record<string, unknown>[],
   queryParams: ref({} as Record<string, string>),
   isMuted: ref(false),
-  backgroundColor: ref("#f5f5f5"),
+  backgroundColor: ref("#c9d658"),
   fontColor: ref("#000"),
   isTouch: ref(false),
 };

@@ -35,9 +35,10 @@ const onClick = async () => {
   font-weight: 900;
   opacity: 0;
   pointer-events: none;
-  background-color: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
   mix-blend-mode: multiply;
-  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
   cursor: pointer;
 
   &--visible {
