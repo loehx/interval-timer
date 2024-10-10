@@ -16,14 +16,16 @@ export default function useController(ctx: TimerContext) {
     },
     promptIntervals: () => {
       const keys = ["workout", "pause", "start"] as TimerState[];
-      const placeholder = keys.map((key) => ctx.times[key]).join(" ");
+      const placeholder = keys
+        .map((key) => formatInterval(ctx.times[key]))
+        .join(" ");
       const input = prompt(
         `Enter intervals in the format: "workout pause" or "workout pause start"`,
         placeholder
       );
       if (!input?.trim()) return;
-      const numberInputs = /\d+/g.exec(input) || [];
-      const intervals = numberInputs.map(Number);
+      const numberInputs = input.split(" ");
+      const intervals = numberInputs.map(parseInterval);
 
       const url = new URL(window.location.href);
       const parsed = keys.map((key, index) => {
@@ -41,4 +43,19 @@ export default function useController(ctx: TimerContext) {
       location.href = url.toString();
     },
   };
+}
+
+function parseInterval(input: string): number {
+  const [minutes, seconds] = input.split(":");
+  if (seconds) {
+    return Number(minutes) * 60 + Number(seconds);
+  }
+  return Number(input);
+}
+
+function formatInterval(seconds: number): string {
+  if (seconds < 60) return String(seconds);
+  const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = seconds % 60;
+  return `${minutes}:${String(remainingSeconds).padStart(2, "0")}`;
 }
