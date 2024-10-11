@@ -16,7 +16,14 @@ const onClick = async () => {
       'pause-screen--visible': ctx.isPaused.value,
     }"
   >
-    <span class="pause-screen__label">CLICK TO START</span>
+    <span class="pause-screen__label">
+      <template v-if="ctx.currentState.value === 'start'">
+        {{ isTouch ? "TAP TO START" : "CLICK TO START" }}
+      </template>
+      <template v-else>
+        {{ isTouch ? "TAP TO RESUME" : "CLICK TO RESUME" }}
+      </template>
+    </span>
   </div>
 </template>
 
